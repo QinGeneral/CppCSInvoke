@@ -89,3 +89,13 @@ This repo show how the C++ and C# invoke eachother by Mono. It include two parts
   component id is4
   component tag is16
   ```
+
+## Note
+> If you got a problem when run ``g++ CppInvokeCS.cpp `pkg-config --cflags --libs mono-2` `` , like this output:
+> ```
+> Package mono-2 was not found in the pkg-config search path. Perhaps you should add the directory containing `mono-2.pc' to the PKG_CONFIG_PATH environment variable No package 'mono-2' found CppInvokeCS.cpp:1:10: fatal error: 'mono/jit/jit.h' file not found.
+> ```
+> You can solve this problem by run the below command in your terminal: 
+> ```
+> export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/Library/Frameworks/Mono.framework/Versions/6.4.0/lib/pkgconfig:$PKG_CONFIG_PATH
+> ```
